@@ -1,0 +1,162 @@
+﻿@model cms.Models.Teacher
+@{
+    ViewBag.Title = "addStudent";
+}
+@*@Scripts.Render("~/bundles/jquery")*@
+<script>
+   
+    function f1()
+    {
+        alert("ho");
+        var us = $('#abc').val();
+        $.getJSON("/teacher/check?user=" + us, function (data) {
+            if (data)
+                alert("user already there");
+            else
+                alert("username valid");
+        });
+    }
+    //$(document).ready(function () {
+
+    //    $('#checking').hide();
+
+    //    $('#1').mouseout(function () {
+
+    //        var userName = $('#UserName').val();
+
+    //        //alert('User Name ='+ userName);
+    //        $('#checking').show();
+    //        $.getJSON("/Admin/CheckUserName?UserName=g", function (data) {
+    //            $('2').hide();
+    //            if (data) {
+    //                $('2').text("User already exists in database");
+
+    //            }
+    //            else {
+    //                $('2').text("User Name is available");
+    //            }
+    //        });
+
+    //    });
+    //});
+</script>
+
+
+    <div class="row">
+    <div class="col-md-4"></div>
+    <div class="col-md-4">
+        <h1 style="font-size:x-large;color:lightblue">Teacher Sign Up Form</h1><br /><br />
+    <form action="/admin/add1" method="post">
+        
+
+       <div id="2" style="color:red"></div> 
+   <table>
+       
+  <tbody>
+        <tr >
+            <td>   
+                <label style="color:lavender;font-family:'Bookman Old Style'">Enter Name</label>
+            </td>
+
+            <td>
+              
+            
+                @Html.TextBoxFor(m =>m.name , new { placeholder = "your name",id="abc" });
+                <div id="2"></div>
+            </td>
+            <td><input type="button" value="check" onclick="f1()"/></td>
+        </tr>
+      
+       <tr> 
+           <td><br /></td>
+       </tr>
+      <tr>
+          <td>
+              <label style="color:lavender;font-family:'Bookman Old Style'">Enter Id</label>
+          </td>
+          <td>
+
+              @Html.TextBoxFor(m => m.id , new { placeholder = "your id" });
+          </td>
+      </tr>
+      <tr>
+          <td><br /></td>
+      </tr>
+            <tr>
+            <td>
+            
+                <label style="color:lavender;font-family:'Bookman Old Style'">Enter Qualification</label>
+            </td>
+            <td>
+
+                @Html.TextBoxFor(m => m.qualification , new { placeholder = "your qualififcation" });
+            </td>
+                
+        </tr>
+      <tr> 
+           <td><br /></td>
+       </tr>
+       <tr>
+            <td>
+            
+                <label style="color:lavender;font-family:'Bookman Old Style'">Enter Religion</label>
+            </td>
+            <td>
+                @Html.TextBoxFor(m => m.religion , new { placeholder = "your religion" });
+                
+            </td>
+  
+        </tr>
+      <tr> 
+           <td><br /></td>
+       </tr>
+      <tr>
+            <td>
+            
+                <label style="color:lavender;font-family:'Bookman Old Style'">Enter City</label>
+            </td>
+            <td>
+
+                @Html.TextBoxFor(m => m.city, new { placeholder = "your city" });
+            </td>
+ 
+        </tr>
+      <tr> 
+           <td><br /></td>
+       </tr>
+      <tr >
+            <td>
+                <label style="color:lavender;font-family:'Bookman Old Style'">Enter Email</label>
+            </td>
+            <td>
+                @Html.TextBoxFor(m => m.email , new { placeholder = "your email" });
+            </td>
+        </tr>
+      <tr> 
+           <td><br /></td>
+       </tr>
+
+      <tr >
+            <td>
+                <label style="color:lavender;font-family:'Bookman Old Style'">Enter Password</label>
+            </td>
+            <td>
+                @Html.PasswordFor(m => m.password , new { placeholder = "your password" });
+            </td>
+ 
+        </tr>
+      <tr> 
+           <td><br /></td>
+       </tr>
+      <tr>
+          <td>
+              <input type="submit" value="Submit" />
+            </td>
+          </tr>
+      </tbody>
+    </table>
+        
+        </form>
+        </div>
+        </div>
+    

@@ -1,0 +1,21 @@
+﻿@{
+    ViewBag.Title = "uploadFile";
+}
+
+<div class="row">
+    <div class="col-md-3"></div>
+    <div class="col-md-7">
+
+        <form action="/admin/upload" method="post" enctype="multipart/form-data">
+
+            <p style="color:white">>Upload file: </p> &nbsp;&nbsp;&nbsp;&nbsp; <input type="file" name="image" />
+            <br />
+
+
+            <input type="submit" value="upload" />
+        </form>
+        <img src="~/Img/bbbbb.jpg" />
+    </div>
+    <div class="col-md-2"></div>
+</div>
+

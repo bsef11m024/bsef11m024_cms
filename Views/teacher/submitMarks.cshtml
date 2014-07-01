@@ -1,0 +1,36 @@
+﻿@{
+    ViewBag.Title = "submitMarks";
+}
+
+<form action="/teacher/quiz" method="post">
+    <div class="col-md-3"></div>
+    <div class="col-md-8">
+
+        <style>
+            table, th, td {
+                border: 2px solid white;
+            }
+        </style>
+        <table style="width:700px">
+            <tr>
+                <td style="color:lavender;font-family:'Bookman Old Style'">Name</td>
+                <td style="color:lavender;font-family:'Bookman Old Style'">Quiz Id</td>
+                <td style="color:lavender;font-family:'Bookman Old Style'">Total Marks</td>
+                <td style="color:lavender;font-family:'Bookman Old Style'">Marks Obtained</td>
+            </tr>
+
+            @foreach (var x in Model)
+            {
+                <tr>
+                    <td style="color:lavender;font-family:'Bookman Old Style'">@x.name.ToString()</td>
+                    <td style="color:lavender;font-family:'Bookman Old Style'"><input type="text" name="t1" style="background-color:#ff0000 "/> </td>
+                    <td style="color:lavender;font-family:'Bookman Old Style'"><input type="text" name="t2" style="background-color:#ff0000 " /> </td>
+                    <td style="color:lavender;font-family:'Bookman Old Style'"><input type="text" name="t2" style="background-color:#ff0000 " /> </td> 
+                </tr>
+            }
+        </table><br /><br />
+        <input type="submit" value="submit" />
+
+
+    </div>
+</form>

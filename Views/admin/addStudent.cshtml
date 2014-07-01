@@ -1,0 +1,132 @@
+﻿@model cms.Models.Student
+@{
+    ViewBag.Title = "addStudent";
+}
+<script>
+    function f1()
+    {
+        alert("ho");
+        var us = $('#abc').val();
+        $.getJSON("/student/check?user=" + us, function (data) {
+            if (data)
+                alert("user already there");
+            else
+                alert("username valid");
+        });
+    }
+    </script>
+
+    <div class="row">
+    <div class="col-md-4"></div>
+    <div class="col-md-4">
+        <h1 style="font-size:x-large;color:lightblue">Student Sign Up Form</h1><br /><br />
+        <form action="/admin/add" method="post">
+   <table>
+  <tbody>
+
+        <tr >
+            <td>
+
+                <label style="color:lavender;font-family:'Bookman Old Style'">Enter Name</label>
+            </td>
+            <td>
+                @Html.TextBoxFor(m => m.name, new { placeholder = "your name", id="abc" });
+    </td>
+            <td><input type="button" value="check" onclick="f1()" /></td>
+</tr>
+<tr>
+   <td><br /></td>
+   <tr>
+    <td>
+
+        <label style="color:lavender;font-family:'Bookman Old Style'">Enter RollNo</label>
+    </td>
+    <td>
+
+        @Html.TextBoxFor(m => m.roll_no, new { placeholder = "your rollNo" });
+    </td>
+</tr>
+<tr>
+   <td><br /></td>
+</tr>
+    <tr>
+    <td>
+
+        <label style="color:lavender;font-family:'Bookman Old Style'">Enter Discipline</label>
+    </td>
+    <td>
+
+        @Html.TextBoxFor(m =>m.discipline, new { placeholder = "your discipline" });
+    </td>
+</tr>
+<tr>
+   <td><br /></td>
+</tr>
+<tr>
+    <td>
+
+        <label style="color:lavender;font-family:'Bookman Old Style'">Enter Class</label>
+    </td>
+    <td>
+
+        @Html.TextBoxFor(m =>m.@class  , new { placeholder = "your name" });
+    </td>
+</tr>
+<tr>
+   <td><br /></td>
+</tr>
+<tr>
+    <td>
+
+        <label style="color:lavender;font-family:'Bookman Old Style'">Enter City</label>
+    </td>
+    <td>
+
+        @Html.TextBoxFor(m =>m.city, new { placeholder = "your city" });
+    </td>
+</tr>
+<tr>
+   <td><br /></td>
+</tr>
+<tr >
+    <td>
+        <label style="color:lavender;font-family:'Bookman Old Style'">Enter PhoneNo</label>
+    </td>
+    <td>
+        @Html.TextBoxFor(m =>m.phoneno, new { placeholder = "your phoneNo" });
+    </td>
+</tr>
+<tr>
+   <td><br /></td>
+</tr>
+<tr >
+    <td>
+        <label style="color:lavender;font-family:'Bookman Old Style'">Enter Email</label>
+    </td>
+    <td>
+        @Html.TextBoxFor(m => m.email, new { placeholder = "your email" });
+    </td>
+</tr>
+<tr>
+   <td><br /></td>
+</tr>
+<tr>
+  <td>
+      <label style="color:lavender;font-family:'Bookman Old Style'">Enter Password</label>
+  </td>
+  <td>
+      @Html.PasswordFor(m =>m.password, new { placeholder = "your password" });
+    </td>
+
+</tr>
+<tr>
+    <td><br /></td>
+</tr>
+</tbody>
+</table>
+ <input type="submit" value="Submit"/>
+</form>
+  </div>
+  <div class="col-md-4">
+  </div>
+  </div>

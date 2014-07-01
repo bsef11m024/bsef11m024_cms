@@ -1,0 +1,22 @@
+﻿@{
+    ViewBag.Title = "studentLogin";
+}
+<form action="/student/checkLogin" method="post">
+    <div class="row">
+    <div class="col-md-4"></div>
+    <div class="col-md-4">
+    <h2 style="font-size:x-large;color:lightblue">Login to Check Your Credentials</h2><br /><br />
+    <div class="inputdata">
+        <label style="font-size:x-large;color:aquamarine "> Enter rolNumber     </label>
+      <div style="display:inline"> <input type="text" name="roll_no"/> </div>
+      <div class="clear"></div>
+   </div><br />
+        <div class="inputdata">
+            <label style="font-size:x-large;color:aquamarine "> Enter password     </label>
+      <div style="display:inline"> <input type="password" name="password"  /> </div>
+      <div class="clear"></div>
+   </div><br />
+        <input type="submit" value="submit" />
+        </div>
+</div>
+</form>

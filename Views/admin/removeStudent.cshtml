@@ -1,0 +1,39 @@
+﻿@model cms.Models.Student
+@{
+    ViewBag.Title = "removeStudent";
+}
+
+    <div class="row">
+        <div class="col-md-4"></div>
+        <div class="col-md-4">
+            <form action="/admin/removety" method="post">
+                <h1 style ="font-size:x-large;color:lightblue" >Removing Student Record </h1><br />
+                <table>
+                    <tr>
+                        <td>
+
+                            <label class="text-muted">Enter rollNo</label>
+                        </td>
+                        <td>
+
+                            @Html.TextBoxFor(m => m.roll_no, new { placeholder = "your rollNo" });
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <br />
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <input type="submit" value="submit" />
+                        </td>
+                    </tr>
+                </table>
+            </form>
+            </div>
+    
+</div>
+       
+       
+            

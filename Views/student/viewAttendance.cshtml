@@ -1,0 +1,40 @@
+﻿@{
+    ViewBag.Title = "viewAttendance";
+}
+<form action="/student/studentFun">
+    <div class="row">
+        <div class="col-md-3"></div>
+        <div class="col-md-7">
+            <style>
+                table, th, td {
+                    border: 1px solid white;
+                }
+            </style>
+            <table style="width:300px">
+                <tr>
+
+                    <td style="color:white; font-size:x-large ">Name</td>
+                    <td style="color:white; font-size:x-large">Status</td>
+                    <td style="color:white; font-size:x-large ">Date</td>
+                </tr>
+                @foreach (var s in Model)
+                {
+                    <tr>
+
+                        <td style="color:white">
+                            @s.name
+                        </td>
+                        <td style="color:white">
+                            @s.status
+                        </td>
+                        <td style="color:white">
+                            @s.date
+                        </td>
+                    </tr>
+                }
+            </table><br /><br />
+            <input type="submit" value="Submit" />
+        </div>
+        <div class="col-md-2"></div>
+    </div>
+    </form>
